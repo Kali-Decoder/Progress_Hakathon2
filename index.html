@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomePage</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Alegreya&family=Cinzel&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Alegreya&family=Cinzel&family=Kaushan+Script&display=swap");
+      body {
+        background-color: #80ffdb;
+      }
+      .navbar
+      {
+        position: -webkit-sticky !important; /* Safari */
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 999;
+      }
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+      }
+      /* Slider  */
+      .slideshow-container {
+        margin-top: 30px;
+        max-width: 100%;
+        position: relative;
+        margin: auto;
+        border-bottom: 4px solid #48cae4;
+      }
+
+      /* Hide the images by default */
+      .mySlides {
+        display: block;
+      }
+      .mySlides img {
+        width: 100%;
+        height: 30rem !important;
+        object-fit: cover;
+      }
+
+      /* Caption text */
+      .text {
+        color: #f2f2f2;
+        font-size: 45px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        font-family: "Kaushan Script", cursive;
+      }
+
+      /* Fading animation */
+
+      /* slider end    */
+      .dropdown-item:hover {
+        background-color: #8ecae6;
+      }
+
+      /* logo    */
+      .box {
+        width: 3rem;
+        height: 3rem;
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      .box div {
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid black;
+        /* background-color:black ; */
+      }
+      .white {
+        background-color: white;
+      }
+
+      .cl {
+        width: 10rem;
+        height: 18rem;
+        border: 4px solid #0096c7;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        padding: 0% !important;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.6s;
+        background-color: #caf0f8;
+      }
+      .cl:hover {
+        transform: scale(1.1);
+      }
+      .box-img {
+        /* width: 100%; */
+        height: 30%;
+        background-color: #00f5d4;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      .title {
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        font-family: "Alegreya", serif;
+      }
+      .nav-link {
+        color: black !important;
+        font-weight: 700 !important;
+      }
+
+      /* .cl img{
+
+          width: 100%;
+          object-fit: cover;
+
+        } */
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #48bfe3;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #8ecae6"
+    >
+      <a class="navbar-brand" href="#">
+        <div class="logo">
+          <div class="box">
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+            <div class="white"></div>
+          </div>
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-dark"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Classes
+            </a>
+            <div
+              class="dropdown-menu"
+              id="classes"
+              aria-labelledby="navbarDropdown"
+            ></div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- navbar  -->
+    <!-- slider  -->
+    <!-- Slideshow container -->
+    <div class="slideshow-container mt-1"></div>
+    <br />
+
+    <!-- slider end  -->
+
+    <div class="container mb-5">
+      <div class="row mt-5">
+        <div class="col-md-10 col-12 mx-auto">
+          <h1
+            class="text-center"
+            style="font-family: 'Cinzel', serif; letter-spacing: 0.3rem"
+          >
+            C.l.a.s.s -12
+          </h1>
+        </div>
+      </div>
+      <div class="row mt-5 mx-auto">
+        <div class="col-md-3 col-12 cl">
+          <div class="box-img"></div>
+          <hr />
+          <div class="title"><h1 class="text-center">Maths</h1></div>
+        </div>
+        <div class="col-md-3 offset-1 col-12 cl">
+          <div class="box-img" style="background-color: #ee6c4d"></div>
+          <hr />
+          <div class="title"><h1 class="text-center">Chemistry</h1></div>
+        </div>
+        <div class="col-md-3 offset-1 col-12 cl">
+          <div class="box-img" style="background-color: #3d5a80"></div>
+          <hr />
+          <div class="title"><h1 class="text-center">Physics</h1></div>
+        </div>
+      </div>
+
+      <div class="row mt-5 mx-auto">
+        <div class="col-md-3 col-12 cl">
+          <div class="box-img" style="background-color: #ff006e"></div>
+          <hr />
+          <div class="title"><h1 class="text-center">English</h1></div>
+        </div>
+        <div class="col-md-3 offset-1 col-12 cl">
+          <div class="box-img" style="background-color: #2ec4b6"></div>
+          <hr />
+          <div class="title"><h1 class="text-center">Hindi</h1></div>
+        </div>
+        <div class="col-md-3 offset-1 col-12 cl">
+          <div class="box-img" style="background-color: #fee440"></div>
+          <hr />
+          <div class="title"><h1 class="text-center">Biology</h1></div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <footer class="footer mt-5">
+        <p class="text-center">copyright &copy; Neeraj Choubisa</p>
+      </footer>
+    </div>
+    <script>
+      const sliderdiv = document.querySelector(".slideshow-container");
+      const container = document.querySelector(".container");
+      var images = [
+        {
+          img: "./images/chemistry.jpg",
+          text: "Chemistry",
+        },
+        {
+          img: "./images/computer.jpg",
+          text: "Computer Science",
+        },
+        {
+          img: "./images/english.jpg",
+          text: "English",
+        },
+        {
+          img: "./images/mathematics.jpg",
+          text: "Mathematics",
+        },
+        {
+          img: "./images/physics.jpg",
+          text: "Physics",
+        },
+        {
+          img: "./images/physics.jpg",
+          text: "Physics",
+        },
+      ];
+      // slider
+      var i = 0;
+      setInterval(() => {
+        var imgdiv = ` <div class="mySlides ">
+      <img src=${images[i].img} style="width:100%">
+      <div class="text">${images[i].text}</div>
+    </div>`;
+        sliderdiv.innerHTML = imgdiv;
+        if (i == images.length - 1) i = 0;
+
+        i++;
+      }, 5000);
+
+      // slider end
+      // dropdown
+      const classes = document.querySelector("#classes");
+      const array = [
+        "Class I",
+        "Class II",
+        "Class III",
+        "Class IV",
+        "Class V",
+        "Class VI",
+        "Class VII",
+        "Class VIII",
+        "Class IX",
+        "Class X",
+        "Class XI",
+        "Class XII",
+      ];
+
+      array.forEach((ele) => {
+        var cl = `<a class="dropdown-item" href="#">${ele}</a>`;
+        classes.innerHTML += cl;
+      });
+
+      // logo script
+      const box = document.querySelector(".box");
+      const divs = document.querySelectorAll(".box div");
+
+      setInterval(() => {
+        divs[Math.round(Math.random() * divs.length - 1)].classList.toggle(
+          "white"
+        );
+      }, 80);
+    </script>
+    <script src="home1.js"></script>
+    <script src="home2.js"></script>
+  </body>
+</html>
